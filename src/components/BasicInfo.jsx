@@ -1,12 +1,24 @@
 /* eslint-disable react/prop-types */
 import '/src/styles/BasicInfo.css'
-export default function BasicInfo({basicInfo, setBasicInfo}) {
+import { useState } from 'react'
+
+export default function BasicInfo({setGlobalInfo}) {
+  const [basicInfo, setBasicInfo] = useState({
+    fullName: '',
+    phone: '',
+    email: ''
+}) 
 
   const handleChange = (e) => {
     //Name:Value pair from target
     //Pass in shallow copy of previous state along with value to update
     const {name, value} = e.target;
     setBasicInfo((prevInfo) => ({...prevInfo, [name]: value}))
+  }
+
+  const handleSave =(e) => {
+    e.preventDefault();
+    setGlobalInfo(basicInfo)
   }
 
   return (
@@ -46,6 +58,7 @@ export default function BasicInfo({basicInfo, setBasicInfo}) {
           onChange={handleChange}
           />
         </div>
+        <button type='button' onClick={handleSave}>Save</button>
       </form>
     </div>
   );
