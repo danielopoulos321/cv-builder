@@ -1,0 +1,7 @@
+.cvOutline{
+    width: 525px;
+    aspect-ratio: 8.5/11;
+    border: 1px solid black;
+    background-color: white;
+    flex-shrink: 0;
+}
