@@ -2,17 +2,73 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    padding: 2em;
+    padding: 1em 2em;
     margin-bottom: 2em;
-    border-radius: 50px;
+    border-radius: 25px;
     background: #ffffff;
     box-shadow:  20px 20px 60px #bebebe,
              -20px -20px 60px #ffffff;
 }
 
+.infoHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: scaleY(1);
+}
+
 .inputContainer{
     position: relative;
     margin-top: 2em;
+}
+
+form {
+ display: block;
+ overflow: hidden;
+ transition: height 0.3s ease-in-out;
+}
+
+.collapse{
+    display: none;
+}
+
+.up{
+    transform: scaleY(1);
+    transition: transform .2s ease;
+}
+
+.down{
+  transform: scaleY(-1);
+  transition: transform .2s ease;
+}
+
+.save-edit{
+    margin-top: 1em;
+    display: flex;
+    justify-content: start;
+}
+
+.save-edit > button {
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(92,92,92,1) 0%, rgba(32,98,111,1) 99%);
+    padding: .75em 1.5em;
+    border: none;
+    border-radius: 1.75em;
+    cursor: pointer;
+}
+
+.save-edit > button > div > span{
+    margin-left: .5em;
+    font-size: 1.25em;
+}
+
+button > div {
+    display: flex;
+    align-items: center;
+}
+
+.hidden{
+    display: none;
 }
 
 label{
@@ -24,6 +80,7 @@ input {
     width: calc(100% - 2.5em);
     height: 44px;
     background-color: #05060f0a;
+    color: #05060f;
     border-radius: .5rem;
     padding: 0 1rem;
     border: 2px solid transparent;
@@ -33,11 +90,14 @@ input {
     background .2s cubic-bezier(.25,.01,.25,1) 0s;
    }
    
-   input:hover, input:focus, input-group:hover input {
+   input:hover:not(:disabled), input:focus:not(:disabled), input-group:hover:not(:disabled) input {
     outline: none;
     border-color: #05060f;
   }
   
-  input-group:hover label, input:focus {
-    color: #05060fc2;
+
+
+  input:disabled {
+    background-color: rgb(177, 177, 177);
+    color: #05060f;
   }
