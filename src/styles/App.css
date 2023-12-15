@@ -15,7 +15,42 @@ ul {
 }
 
 .allInputsContainer{
+  margin: 0 1em;
   width: 40em;
   display: flex;
   flex-direction: column;
+}
+
+.infoContainer{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 1em 2em;
+  margin-bottom: 2em;
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #bebebe,
+           -20px -20px 60px #ffffff;
+}
+
+@media (max-width: 1000px) and (min-width: 675px) {
+  .allInputsContainer{
+    width: 90%;
+  }
+
+  #root{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 674px){
+  .allInputsContainer{
+    width: 100%;
+  }
+
+  #root{
+    flex-direction: column;
+    align-items: center;
+  }
 }

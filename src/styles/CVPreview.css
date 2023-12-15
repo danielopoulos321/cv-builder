@@ -4,4 +4,18 @@
     border: 1px solid black;
     background-color: white;
     flex-shrink: 0;
+    max-height: calc(525px / (8.5/11));
 }
+
+@media (max-width: 1000px) and (min-width: 675px) {
+    .cvOutline{
+        width: 90%;
+        max-height: calc(100% / (8.5/11));
+    }
+  }
+  
+  @media (max-width: 674px){
+    .cvOutline{
+        width: 100%;
+    }
+  }
