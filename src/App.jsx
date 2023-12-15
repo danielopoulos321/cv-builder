@@ -8,9 +8,9 @@ import CVPreview from './components/CVPreview'
 function App() {
     const [globalInfo, setGlobalInfo] = useState({
         basicInfo: {
-          fullName: '',
-          phone: '',
-          email: '',
+          fullName: 'Your Name',
+          phone: '555-555-555',
+          email: 'email@email.com',
         },
         educationInfo: [],
         careerInfo: [],
