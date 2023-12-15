@@ -2,6 +2,7 @@ import './styles/App.css'
 import { useState } from 'react'
 import BasicInfo from './components/BasicInfo'
 import EducationInfo from './components/EducationInfo'
+import CareerInfo from './components/CareerInfo'
 import CVPreview from './components/CVPreview'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           email: '',
         },
         educationInfo: [],
+        careerInfo: [],
     })
     return (
 
@@ -19,6 +21,7 @@ function App() {
             <div className="allInputsContainer">
                 <BasicInfo globalInfo={globalInfo} setGlobalInfo={setGlobalInfo}/>
                 <EducationInfo globalInfo={globalInfo} setGlobalInfo={setGlobalInfo}/>
+                <CareerInfo globalInfo={globalInfo} setGlobalInfo={setGlobalInfo} />
             </div>
             <CVPreview globalInfo={globalInfo}/>
         </>
