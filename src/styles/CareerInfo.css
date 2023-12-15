@@ -1,0 +1,44 @@
+.careerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: scaleY(1);
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 1em 2em;
+    margin-bottom: 2em;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+.inputContainer{
+    position: relative;
+    margin-top: 2em;
+}
+
+.job-entries{
+    display: flex;
+    flex-direction: column;
+}
+
+.job-element{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-info > h2 {
+    font-size: 1em;
+    margin: 0;
+}
+
+.job-info > p {
+    margin: 0;
+}
