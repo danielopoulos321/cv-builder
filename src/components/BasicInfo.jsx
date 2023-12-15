@@ -32,7 +32,15 @@ export default function BasicInfo({setGlobalInfo}) {
 
   const handleSave = (e) => {
     e.preventDefault();
-    setGlobalInfo(basicInfo);
+    setGlobalInfo((prevGlobalInfo) => ({
+      ...prevGlobalInfo,
+      basicInfo: {
+        ...prevGlobalInfo.basicInfo,
+        fullName: basicInfo.fullName,
+        phone: basicInfo.phone,
+        email: basicInfo.email,
+      },
+    }));
     const buttons = document.querySelectorAll('#basicInfoButtons button');
     buttons.forEach((button) => {
       button.classList.toggle('hidden');
