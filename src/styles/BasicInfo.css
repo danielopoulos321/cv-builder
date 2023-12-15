@@ -49,8 +49,7 @@ form {
 }
 
 .save-edit > button {
-    background: rgb(2,0,36);
-    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(92,92,92,1) 0%, rgba(32,98,111,1) 99%);
+    background-color: #ff7070;
     padding: .75em 1.5em;
     border: none;
     border-radius: 1.75em;
@@ -95,8 +94,6 @@ input {
     border-color: #05060f;
   }
   
-
-
   input:disabled {
     background-color: rgb(177, 177, 177);
     color: #05060f;

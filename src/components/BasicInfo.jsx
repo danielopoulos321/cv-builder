@@ -13,17 +13,24 @@ export default function BasicInfo({setGlobalInfo}) {
     email: ''
 }) 
 
+  const [isSaveButtonDisabled, setSaveButtonDisabled] = useState(true);
+
+  function isFormValid() {
+    return basicInfo.fullName.trim() !== '' && basicInfo.phone.trim() !== '' && basicInfo.email.trim() !== '';
+  }
+
   const handleChange = (e) => {
     //Name:Value pair from target
     //Pass in shallow copy of previous state along with value to update
     const {name, value} = e.target;
     setBasicInfo((prevInfo) => ({...prevInfo, [name]: value}))
+    setSaveButtonDisabled(!isFormValid());
   }
 
   const handleSave = (e) => {
     e.preventDefault();
     setGlobalInfo(basicInfo);
-    const buttons = document.querySelectorAll('.save-edit button');
+    const buttons = document.querySelectorAll('#basicInfoButtons button');
     buttons.forEach((button) => {
       button.classList.toggle('hidden');
     })
@@ -33,12 +40,12 @@ export default function BasicInfo({setGlobalInfo}) {
       if (inputField) {
         inputField.disabled = true;
     }});
-    
+    return false;
   }
 
   const handleEdit = (e) => {
     e.preventDefault();
-    const buttons = document.querySelectorAll('.save-edit button');
+    const buttons = document.querySelectorAll('#basicInfoButtons button');
     buttons.forEach((button) => {
       button.classList.toggle('hidden');
     })
@@ -71,7 +78,7 @@ export default function BasicInfo({setGlobalInfo}) {
         <h1>Personal Information</h1>
         <Icon className='down' path={mdiChevronUp} size={1} />
       </div>
-      <form action="submit" className='collapse' id='basicInfoForm'>
+      <form className='collapse' id='basicInfoForm'>
         <div className="inputContainer">
           <label htmlFor="fullName">Full Name</label>
           <input
@@ -105,8 +112,8 @@ export default function BasicInfo({setGlobalInfo}) {
           onChange={handleChange}
           />
         </div>
-        <div className="save-edit">
-          <button onClick={handleSave} >
+        <div id='basicInfoButtons' className="save-edit">
+          <button id='saveButton' onClick={handleSave} disabled={isSaveButtonDisabled} >
             <div>
               <Icon path={mdiContentSave} size={1} />
                <span>Save</span>
