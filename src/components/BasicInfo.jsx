@@ -4,7 +4,7 @@ import Icon from '@mdi/react';
 import { mdiChevronUp } from '@mdi/js';
 import { mdiContentSave } from '@mdi/js';
 import { mdiPencilBoxOutline } from '@mdi/js';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function BasicInfo({setGlobalInfo}) {
   const [basicInfo, setBasicInfo] = useState({
@@ -19,12 +19,15 @@ export default function BasicInfo({setGlobalInfo}) {
     return basicInfo.fullName.trim() !== '' && basicInfo.phone.trim() !== '' && basicInfo.email.trim() !== '';
   }
 
+  useEffect(() => {
+    setSaveButtonDisabled(!isFormValid());
+  }, [basicInfo]);
+
   const handleChange = (e) => {
     //Name:Value pair from target
     //Pass in shallow copy of previous state along with value to update
     const {name, value} = e.target;
     setBasicInfo((prevInfo) => ({...prevInfo, [name]: value}))
-    setSaveButtonDisabled(!isFormValid());
   }
 
   const handleSave = (e) => {
@@ -113,7 +116,7 @@ export default function BasicInfo({setGlobalInfo}) {
           />
         </div>
         <div id='basicInfoButtons' className="save-edit">
-          <button id='saveButton' onClick={handleSave} disabled={isSaveButtonDisabled} >
+          <button onClick={handleSave} disabled={isSaveButtonDisabled} >
             <div>
               <Icon path={mdiContentSave} size={1} />
                <span>Save</span>
