@@ -1,0 +1,63 @@
+.eduHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: scaleY(1);
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 1em 2em;
+    margin-bottom: 2em;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+.inputContainer{
+    position: relative;
+    margin-top: 2em;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edu-entries{
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-element{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edu-info > h2 {
+    font-size: 1em;
+    margin: 0;
+}
+
+.edu-info > p {
+    margin: 0;
+}
+
+.edit-button{
+    height: fit-content;
+    background-color: #ff7070;
+    padding: .75em 1.5em;
+    border: none;
+    border-radius: 1.75em;
+    cursor: pointer;
+}
+
+.edit-button > div > span{
+    margin-left: .5em;
+    font-size: 1.25em;
+}
