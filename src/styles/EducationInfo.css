@@ -5,18 +5,6 @@
     transform: scaleY(1);
 }
 
-.infoContainer{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    padding: 1em 2em;
-    margin-bottom: 2em;
-    border-radius: 25px;
-    background: #ffffff;
-    box-shadow:  20px 20px 60px #bebebe,
-             -20px -20px 60px #ffffff;
-}
-
 .inputContainer{
     position: relative;
     margin-top: 2em;
