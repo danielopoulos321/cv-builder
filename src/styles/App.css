@@ -1,6 +1,21 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
   padding: 2rem;
-  text-align: center;
+}
+
+h1{
+  font-size: 1.5em;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.allInputsContainer{
+  width: 40em;
+  display: flex;
+  flex-direction: column;
 }
